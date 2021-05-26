@@ -13,7 +13,7 @@ class PlantsController < ApplicationController
     if @plant.save
       redirect_to garden_path(@garden)
     else
-      render :new
+      render 'gardens/show'
     end
   end
 

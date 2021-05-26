@@ -1,14 +1,9 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden.image_url %>);">
+  <div class="container">
+    <h1><%= @garden.name %></h1>
+  </div>
+</div>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @garden.name %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @garden.image_url %>
-</p>
 
 <% @garden.plants.each do |plant| %>
   <div>
@@ -20,8 +15,7 @@
     </div>
   </div>
 <% end %>
-  
 
-<%= link_to 'Add a new plant', new_garden_plant_path(@garden) %> |
+<%= link_to 'Add a new plant', new_garden_plant_path(@garden)  %>
 <%= link_to 'Edit', edit_garden_path(@garden) %> |
 <%= link_to 'Back', root_path %>
