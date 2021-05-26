@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @garden.name %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @garden.image_url %>
+</p>
+
+<% @garden.plants.each do |plant| %>
+  <div>
+    <p><%= plant.name %></p>
+    <img src="<%= plant.image_url %>" alt="<%= plant.name %>" height="100">
+    <div>
+      <%= link_to "edit plant", edit_plant_path(plant) %>
+      <%= link_to "destroy plant", plant_path(plant), method: :delete, data: { confirm: 'are you sure?? Is such a beautiful plant :c '} %>
+    </div>
+  </div>
+<% end %>
+  
+
+<%= link_to 'Add a new plant', new_garden_plant_path(@garden) %> |
+<%= link_to 'Edit', edit_garden_path(@garden) %> |
+<%= link_to 'Back', root_path %>
